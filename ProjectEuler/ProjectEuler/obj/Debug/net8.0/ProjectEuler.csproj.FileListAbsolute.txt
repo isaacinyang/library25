@@ -1,0 +1,14 @@
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/bin/Debug/net8.0/ProjectEuler
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/bin/Debug/net8.0/ProjectEuler.deps.json
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/bin/Debug/net8.0/ProjectEuler.runtimeconfig.json
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/bin/Debug/net8.0/ProjectEuler.dll
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/bin/Debug/net8.0/ProjectEuler.pdb
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/ProjectEuler.GeneratedMSBuildEditorConfig.editorconfig
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/ProjectEuler.AssemblyInfoInputs.cache
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/ProjectEuler.AssemblyInfo.cs
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/ProjectEuler.csproj.CoreCompileInputs.cache
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/ProjectEuler.dll
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/refint/ProjectEuler.dll
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/ProjectEuler.pdb
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/ProjectEuler.genruntimeconfig.cache
+/home/ansyl/Desktop/coding/c#intro/ProjectEuler/ProjectEuler/obj/Debug/net8.0/ref/ProjectEuler.dll

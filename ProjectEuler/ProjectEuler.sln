@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEuler", "ProjectEuler\ProjectEuler.csproj", "{4AF159CE-5F84-4BA0-8404-1F2B1B7BEBF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C# Intro", "C# Intro\C# Intro.csproj", "{437B2801-F333-451D-8442-8D4D56AA3515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryVerse", "MemoryVerse\MemoryVerse.csproj", "{806528B9-B656-4403-B913-3D3D3052D8C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AF159CE-5F84-4BA0-8404-1F2B1B7BEBF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AF159CE-5F84-4BA0-8404-1F2B1B7BEBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AF159CE-5F84-4BA0-8404-1F2B1B7BEBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AF159CE-5F84-4BA0-8404-1F2B1B7BEBF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{437B2801-F333-451D-8442-8D4D56AA3515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{437B2801-F333-451D-8442-8D4D56AA3515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{437B2801-F333-451D-8442-8D4D56AA3515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{437B2801-F333-451D-8442-8D4D56AA3515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806528B9-B656-4403-B913-3D3D3052D8C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806528B9-B656-4403-B913-3D3D3052D8C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806528B9-B656-4403-B913-3D3D3052D8C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806528B9-B656-4403-B913-3D3D3052D8C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
