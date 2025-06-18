@@ -10,8 +10,6 @@ namespace ProjectEuler.ProjectEuler
     {
         static void Main(string[] args)
         {
-            // Problem4.Solution();
-
             
         }
     }

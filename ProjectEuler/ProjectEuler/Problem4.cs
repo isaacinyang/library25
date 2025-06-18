@@ -4,7 +4,7 @@ namespace ProjectEuler;
 
 public class Problem4
 {
-    public static void Solution(string[] args)
+    public static void Solution()
     {
         int palindrome = 0;
 
