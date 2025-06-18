@@ -6,6 +6,8 @@ namespace ProjectEuler.MemoryVerse
 {
     class Program
     {
+        var file = File
+        return;
         static List<Verse> verses = [
             new Verse("In the beginning, God created the heavens and the earth.", "Genesis", 1, 1),
             new Verse("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.", "John", 3, 16),
