@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-// using System.Security.Cryptography;
+using System.Threading;
+using System.Threading.Tasks;
 using MemoryVerse;
 
 namespace ProjectEuler.MemoryVerse
@@ -20,7 +21,9 @@ namespace ProjectEuler.MemoryVerse
         {
             Console.WriteLine("Welcome to the Memory Verse Challenge!\nPress any key to start...");
             Console.ReadKey();
-            Console.WriteLine("");
+            // Thread.Sleep(1000);
+            // Task.Delay(1000).Wait();
+            Console.WriteLine("heh");
 
             SetupQuiz();
         }

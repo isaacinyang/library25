@@ -2,7 +2,7 @@ using System;
 
 namespace ProjectEuler;
 
-public class Problem10
+public class Problem11
 {
     static List<bool> primes = [];
     public static void Solution()
