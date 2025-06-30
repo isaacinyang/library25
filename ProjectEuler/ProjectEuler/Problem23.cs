@@ -4,39 +4,56 @@ namespace ProjectEuler;
 
 public class Problem23
 {
-    static List<bool> primes = [];
     public static void Solution()
     {
-        Console.WriteLine("starting...");
-        for (int i = 0; i < 2000000; i++)
+        //sum of all the positive integers which cannot be written as the sum of two abundant numbers.
+        List<int> abundant_numbers = [];
+        long sum = 0;
+        Console.WriteLine("finding abundant numbers...");
+        for (int i = 0; i < 28123; i++)
         {
-            primes.Add(true);
+            if (IsAbundant(i))
+            {
+                abundant_numbers.Add(i);
+            }
         }
-        primes[0] = false;
 
+        Console.WriteLine("summing up...");
+        for (int i = 28123; i > 0; i--)
+        {
+            if (i % 1000 == 0) Console.WriteLine("{0} of thousands", i / 1000);
+            foreach (int n in abundant_numbers)
+            {
+                if (n >= i) continue;
+                if (!abundant_numbers.Contains(i - n)) sum += (long)i;
+            }
+        }
+
+        Console.WriteLine("{0}", sum);
+        
+        //1381869676639
+    }
+
+    static List<int> ProperDivisors(int n)
+    {
+        List<int> result = new List<int>();
+        for (int i = 1; i <= n/2; i++)
+        {
+            if (n % i == 0) result.Add(i);
+        }
+
+        return result;
+    }
+
+    static bool IsAbundant(int n)
+    {
         int sum = 0;
 
-        Console.WriteLine("filtering...");
-        for (int i = 2; i <= 2000000; i++)
+        foreach (int divisor in ProperDivisors(n))
         {
-            if (i % 1000 == 0) Console.WriteLine("Completed {0} thousands out of 2000", i/1000);
-            for (int n = i*2; n <= primes.Count; n+=i)
-            {
-                primes[n-1] = false;
-            }
+            sum += divisor;
         }
 
-        Console.WriteLine("summing...");
-        Console.WriteLine("Primes:");
-        for (int n = 0; n < primes.Count; n++)
-        {
-            if (primes[n]) {
-                Console.WriteLine(n+1);
-                sum += n+1;
-            }
-        }
-
-        Console.WriteLine(sum);
-        //1179908154
+        return sum > n;
     }
 }

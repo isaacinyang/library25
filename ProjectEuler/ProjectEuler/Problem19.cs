@@ -4,39 +4,42 @@ namespace ProjectEuler;
 
 public class Problem19
 {
-    static List<bool> primes = [];
     public static void Solution()
     {
-        Console.WriteLine("starting...");
-        for (int i = 0; i < 2000000; i++)
-        {
-            primes.Add(true);
-        }
-        primes[0] = false;
+        //How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+        int year = 1901;
+        int month = 1;
+        int sunday_count = 0;
+        int dayI = 2;
 
-        int sum = 0;
-
-        Console.WriteLine("filtering...");
-        for (int i = 2; i <= 2000000; i++)
+        while (year != 2001)
         {
-            if (i % 1000 == 0) Console.WriteLine("Completed {0} thousands out of 2000", i/1000);
-            for (int n = i*2; n <= primes.Count; n+=i)
+            Console.WriteLine("Year {0}", year);
+            month = 1;
+            while (month != 13)
             {
-                primes[n-1] = false;
+                int days = 31;
+                List<int> month30 = [4, 6, 9, 11];
+
+                if (month == 2)
+                {
+                    if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) days = 29;
+                    else days = 28;
+                }
+                else if (month30.Contains(month)) days = 30;
+
+                for (int i = 0; i < days; i++)
+                {
+                    dayI = (dayI % 7) + 1;
+                    if (dayI == 1) sunday_count++;
+                }
+
+                month++;
             }
+            year++;
         }
 
-        Console.WriteLine("summing...");
-        Console.WriteLine("Primes:");
-        for (int n = 0; n < primes.Count; n++)
-        {
-            if (primes[n]) {
-                Console.WriteLine(n+1);
-                sum += n+1;
-            }
-        }
-
-        Console.WriteLine(sum);
-        //1179908154
+        Console.WriteLine(sunday_count);
+        //5218
     }
 }

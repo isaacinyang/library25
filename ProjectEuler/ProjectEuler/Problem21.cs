@@ -4,39 +4,76 @@ namespace ProjectEuler;
 
 public class Problem21
 {
-    static List<bool> primes = [];
+    static Dictionary<int, List<int>> divisorDictionary = new Dictionary<int, List<int>>();
+    static Dictionary<int, List<int>> dictionary = new Dictionary<int, List<int>>();
     public static void Solution()
     {
-        Console.WriteLine("starting...");
-        for (int i = 0; i < 2000000; i++)
-        {
-            primes.Add(true);
-        }
-        primes[0] = false;
-
+        Console.WriteLine("creating divisor dictionary...");
         int sum = 0;
 
-        Console.WriteLine("filtering...");
-        for (int i = 2; i <= 2000000; i++)
+        for (int i = 1; i < 100000; i++)
         {
-            if (i % 1000 == 0) Console.WriteLine("Completed {0} thousands out of 2000", i/1000);
-            for (int n = i*2; n <= primes.Count; n+=i)
+            divisorDictionary.Add(i, []);
+        }
+        for (int i = 1; i < 100000; i++)
+        {
+            for (int n = i; n < 10000; n += i)
             {
-                primes[n-1] = false;
+                divisorDictionary[n].Add(i);
             }
         }
-
-        Console.WriteLine("summing...");
-        Console.WriteLine("Primes:");
-        for (int n = 0; n < primes.Count; n++)
+        Console.WriteLine("finding amicable numbers...");
+        for (int i = 2; i < 10000; i++)
         {
-            if (primes[n]) {
-                Console.WriteLine(n+1);
-                sum += n+1;
-            }
+            int j = FindDValue(i);
+            Console.WriteLine((i, j));
+            // if (j >)
+            if (IsAmicable(i, j)) sum += i + j;
         }
 
         Console.WriteLine(sum);
-        //1179908154
+        //80568
+    }
+
+    static int FindDValue(int n)
+    {
+        int d = 0;
+
+        foreach (int divisor in divisorDictionary[n])
+        {
+            if (n == divisor) continue;
+            d += divisor;
+        }
+
+        return d;
+    }
+
+    static bool IsAmicable(int a, int b)
+    {
+        return (FindDValue(a) == b && FindDValue(b) == a);
+    }
+
+    static List<int> ProperDivisors(int n)
+    {
+        List<int> divisors = new List<int>();
+        if (dictionary.ContainsKey(n)) divisors = dictionary[n];
+
+        for (int i = 1; i <= n/2; i++)
+        {
+            if (dictionary[n].Contains(i)) continue;
+            if (n % i == 0) divisors.Add(i);
+        }
+        divisors.Add(n);
+
+        for (int i = n; i < 10000; i+=n)
+        {
+            if (!dictionary.ContainsKey(i)) dictionary[i] = [];
+            foreach (int divisor in divisors)
+            {
+                if (dictionary[i].Contains(divisor)) continue;
+                dictionary[i].Add(divisor);
+            }
+        }
+        return divisors;
     }
 }

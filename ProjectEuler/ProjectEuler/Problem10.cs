@@ -8,7 +8,8 @@ public class Problem10
     public static void Solution()
     {
         Console.WriteLine("starting...");
-        for (int i = 0; i < 2000000; i++)
+        int limit = 2000000;
+        for (int i = 0; i < limit; i++)
         {
             primes.Add(true);
         }
@@ -17,12 +18,15 @@ public class Problem10
         int sum = 0;
 
         Console.WriteLine("filtering...");
-        for (int i = 2; i <= 2000000; i++)
+        for (int i = 2; i < limit; i++)
         {
             if (i % 1000 == 0) Console.WriteLine("Completed {0} thousands out of 2000", i/1000);
-            for (int n = i*2; n <= primes.Count; n+=i)
+            if (i*i < limit)
             {
-                primes[n-1] = false;
+                for (int n = i * i; n <= limit; n += i)
+                {
+                    primes[n - 1] = false;
+                }
             }
         }
 

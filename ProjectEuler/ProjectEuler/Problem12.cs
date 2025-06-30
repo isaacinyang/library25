@@ -7,7 +7,7 @@ public class Problem12
     static Dictionary<long, List<long>> divisors = new Dictionary<long, List<long>>();
     public static void Solution()
     {
-        Console.WriteLine(FindTriangleNumber(500));
+        Console.WriteLine(FindTriangleNumber(50));
     }
 
     static int DivisorCount(long n)

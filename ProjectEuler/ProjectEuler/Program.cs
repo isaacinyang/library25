@@ -10,7 +10,8 @@ namespace ProjectEuler.ProjectEuler
     {
         static void Main(string[] args)
         {
-            Problem13.Solution();
+            Problem10.Solution();
+            // Colours.AllColours();
         }
     }
 }

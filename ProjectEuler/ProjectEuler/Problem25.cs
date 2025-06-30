@@ -4,39 +4,41 @@ namespace ProjectEuler;
 
 public class Problem25
 {
-    static List<bool> primes = [];
     public static void Solution()
     {
-        Console.WriteLine("starting...");
-        for (int i = 0; i < 2000000; i++)
-        {
-            primes.Add(true);
-        }
-        primes[0] = false;
+        List<List<int>> fibonnacci = [];
 
-        int sum = 0;
-
-        Console.WriteLine("filtering...");
-        for (int i = 2; i <= 2000000; i++)
+        for (int n = 0; n < 3; n++)
         {
-            if (i % 1000 == 0) Console.WriteLine("Completed {0} thousands out of 2000", i/1000);
-            for (int n = i*2; n <= primes.Count; n+=i)
+            List<int> number = [];
+            for (int i = 0; i < 999; i++)
             {
-                primes[n-1] = false;
+                number.Add(0);
             }
+            number.Add(-(-n/2));
+            fibonnacci.Add(number);
         }
 
-        Console.WriteLine("summing...");
-        Console.WriteLine("Primes:");
-        for (int n = 0; n < primes.Count; n++)
+        while (fibonnacci[0][0] == 0)
         {
-            if (primes[n]) {
-                Console.WriteLine(n+1);
-                sum += n+1;
+            fibonnacci[0] = fibonnacci[1];
+            fibonnacci[1] = fibonnacci[2];
+            for (int i = 0; i < 1000; i++)
+            {
+                fibonnacci[2][i] = fibonnacci[0][i] + fibonnacci[1][i];
+                if (i == 0 && fibonnacci[2][i] > 0) Console.WriteLine("Yahoo!");
+                while (fibonnacci[2][i] > 10)
+                {
+                    fibonnacci[2][i-1]++;
+                    fibonnacci[2][i] -= 10;
+                }
             }
+            for (int i = 0; i < 1000; i++)
+            {
+                Console.Write(fibonnacci[2][i]);
+            }
+            Console.WriteLine("");
+            Console.WriteLine("");
         }
-
-        Console.WriteLine(sum);
-        //1179908154
     }
 }
